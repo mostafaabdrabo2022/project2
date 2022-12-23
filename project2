@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp13
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int startingNumber, endingNumber;                                     //Here we get two inputs from user, a starting number and ending number.
+            Console.WriteLine("Get All Perfect In Range of Between two Number");  //for reading that comment"All Perfect In Range of Between two Number".
+            Console.Write("Enter Starting Number :");                             //for reading starting number.
+            startingNumber = int.Parse(Console.ReadLine());                       //for integration .
+            Console.Write("Enter Ending Number :");                               //for reading endinging number.
+            endingNumber = int.Parse(Console.ReadLine());                         //for integration .
+            Console.WriteLine("Below are the perfect number between" + startingNumber + "and" + endingNumber);
+            for (int i = startingNumber; i <= endingNumber; i++)                  //we iterate loop from starting number to ending number
+            {
+                decimal sum = 0;
+                for(int j = 1; j < i; j++)
+                {
+                    if (i % j == 0)                                            // this loop iterate another loop from 1 to the value of parent loop and declare a new variable called sum and assign zero to it.
+                        sum = sum + j;
+                }
+                if(sum == i)
+                    Console.WriteLine("\t"+i);
+            }
+            Console.ReadKey();                                                   
+
+
+
+        }
+    }
+}
